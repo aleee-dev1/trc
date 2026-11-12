@@ -6,7 +6,7 @@ Terminal file explorer and editor. Opens text files in a built-in editor and CSV
 
 ```
 trc                  # Open current directory
-trc <path>           # Open a directory or file directly
+trc <path>           # Open a directory or file directly in editor
 trc -h               # Show help
 ```
 

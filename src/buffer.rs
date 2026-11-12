@@ -182,7 +182,7 @@ pub fn byte_idx_for_grapheme(line_str: &str, grapheme_idx: usize) -> usize {
         self.last_was_insert = false;
 
         self.clamp_cursor();
-        let normalized = text.replace("\r\n", "\n");
+        let normalized = text.replace("\r\n", "\n").replace('\r', "\n");
         let pasted_lines: Vec<&str> = normalized.split('\n').collect();
 
         if pasted_lines.is_empty() {

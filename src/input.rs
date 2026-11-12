@@ -127,7 +127,7 @@ fn handle_key(app: &mut App, code: KeyCode, modifiers: KeyModifiers) -> io::Resu
                 return Ok(());
             }
             KeyCode::Char('s') | KeyCode::Char('S') => {
-                if matches!(app.focus, Focus::Editor) && matches!(app.file_status, FileStatus::Utf8Loaded) {
+                if matches!(app.focus, Focus::Editor | Focus::Find | Focus::GotoLine) && matches!(app.file_status, FileStatus::Utf8Loaded) {
                     app.save_active_file()?;
                 } else if matches!(app.focus, Focus::CsvEditor) {
                     if let Some(ref mut csv) = app.csv_editor {
